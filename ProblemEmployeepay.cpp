@@ -15,33 +15,33 @@ int main()
     cout << "Enter number of hours worked in a week: ";
     cin >> hoursWorked;
 
-    double gross_pay;
+    double grossPay;
     if (hoursWorked > NORM_HOURS) // If overtime was worked
     {
-        gross_pay += NORM_HOURS * PAY_RATE;
-        gross_pay += (hoursWorked - NORM_HOURS) * OVER_RATE;
+        grossPay += NORM_HOURS * PAY_RATE;
+        grossPay += (hoursWorked - NORM_HOURS) * OVER_RATE;
     }
     else // Overtime was not worked
     {
-        gross_pay += NORM_HOURS * PAY_RATE;
+        grossPay += NORM_HOURS * PAY_RATE;
     }
 
-    cout << "Gross pay:                       $" << gross_pay << endl;
+    cout << "Gross pay:                       $" << grossPay << endl;
 
     // Amount paid in social security tax
-    const double social = gross_pay * 0.06;
+    const double social = grossPay * 0.06;
     cout << "Social Security tax withholding: $" << social << endl;
     // Amount paid in federal income tax
-    const double federal = gross_pay * 0.14;
+    const double federal = grossPay * 0.14;
     cout << "Federal income tax withholding:  $" << federal << endl;
     // Amount paid in state income tax
-    const double state = gross_pay * 0.05;
+    const double state = grossPay * 0.05;
     cout << "State income tax withholding:    $" << state << endl;
     // Amount paid for medical insurance
     const double med_ins = 10;
     cout << "Medical insurance withholding:   $" << med_ins << endl;
 
-    cout << "Net pay:                         $" << (gross_pay - social - federal - state - med_ins) << endl;
+    cout << "Net pay:                         $" << (grossPay - social - federal - state - med_ins) << endl;
 
     return 0;
 }
